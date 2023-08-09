@@ -19,4 +19,3 @@ CREATE TABLE Users (
 );
 
 select * from Users;
-

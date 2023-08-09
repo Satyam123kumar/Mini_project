@@ -138,7 +138,7 @@
                         <asp:Label ID="Label11" runat="server" Text="Password"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox5" runat="server" TextMode="Password"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -147,7 +147,7 @@
                         <asp:Label ID="Label12" runat="server" Text="Re-type Password"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox6" runat="server" TextMode="Password"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>

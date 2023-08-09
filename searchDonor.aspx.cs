@@ -81,7 +81,22 @@ namespace Friends2support
             MySqlConnection conn = new MySqlConnection("host=localhost;username=root;password=mysql;database=friends_users_db");
 
             conn.Open();
-            String query = $"select FullName, MobileNumber, Availability from Users where BloodGroup='{bloodGroup}' and State='{state}' and District='{district}' and City='{city}'";
+            String query = $@"
+                SELECT 
+                    FullName, 
+                    MobileNumber, 
+                    CASE 
+                        WHEN Availability = 0 THEN 'Unavailable' 
+                        WHEN Availability = 1 THEN 'Available'
+                    END AS Availability
+                FROM 
+                    Users 
+                WHERE 
+                    BloodGroup = '{bloodGroup}' 
+                    AND State = '{state}' 
+                    AND District = '{district}' 
+                    AND City = '{city}'
+            ";
 
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
